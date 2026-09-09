@@ -1,0 +1,39 @@
+services:
+  # 1. Backend Web Service (Django REST Framework)
+  - type: web
+    name: cafe-backend
+    runtime: python
+    rootDir: backend
+    plan: free
+    region: oregon
+    buildCommand: "bash build.sh"
+    startCommand: "gunicorn cafe_project.wsgi:application --log-file -"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "*"
+
+  # 2. Frontend Static Site (React + Vite SPA)
+  - type: web
+    name: cafe-frontend
+    runtime: static
+    rootDir: frontend
+    plan: free
+    region: oregon
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: "./dist"
+    routes:
+      - type: rewrite
+        source: "/*"
+        destination: "/index.html"
+    envVars:
+      - key: VITE_API_BASE
+        fromService:
+          type: web
+          name: cafe-backend
+          envVarKey: RENDER_EXTERNAL_URL

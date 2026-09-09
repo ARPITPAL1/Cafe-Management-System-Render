@@ -1,7 +1,12 @@
 const rawApi = import.meta.env.VITE_API_BASE;
-const API_BASE = (rawApi && !rawApi.includes('<') && !rawApi.includes('your-backend') && !rawApi.includes('service-url')) 
+let base = (rawApi && !rawApi.includes('<') && !rawApi.includes('your-backend') && !rawApi.includes('service-url')) 
   ? rawApi.replace(/\/$/, '') 
   : '/api';
+
+if (base.startsWith('http') && !base.endsWith('/api')) {
+  base = `${base}/api`;
+}
+const API_BASE = base;
 
 async function request(endpoint, options = {}) {
   const url = `${API_BASE}${endpoint}`;

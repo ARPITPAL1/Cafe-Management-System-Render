@@ -10,6 +10,8 @@ venv/
 ENV/
 *.log
 local_settings.py
+staticfiles/
+backend/staticfiles/
 
 # Frontend & Node
 node_modules/
