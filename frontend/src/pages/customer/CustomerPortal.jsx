@@ -405,7 +405,7 @@ export default function CustomerPortal() {
           </div>
           <div>
             <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1rem', color: 'var(--text-primary)', lineHeight: 1.1 }}>
-              {cafeInfo?.name || 'The Velvet Bean'}
+              {cafeInfo?.name || 'Cafe-Management'}
             </div>
             <div style={{ fontSize: '0.72rem', color: 'var(--accent-gold)', fontWeight: 700, letterSpacing: '0.03em' }}>
               {tableData.number} • {tableData.floor_section}

@@ -24,7 +24,7 @@ def run_seed():
     cafe, _ = CafeProfile.objects.get_or_create(
         id=1,
         defaults={
-            'name': 'The Velvet Bean & Bistro',
+            'name': 'Cafe-Management',
             'tagline': 'Artisan Brews, Woodfired Crusts & Gourmet Comfort',
             'address': 'Plot 42, Bandra Linking Road, Mumbai 400050',
             'phone': '+91 98201 55667',

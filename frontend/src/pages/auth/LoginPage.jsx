@@ -123,7 +123,7 @@ export default function LoginPage() {
             color: 'var(--text-primary)',
             letterSpacing: '-0.02em'
           }}>
-            {cafeInfo?.name || 'Musafirr Cafe & Bistro'}
+            {cafeInfo?.name || 'Cafe-Management'}
           </h1>
           <p style={{ fontSize: '0.85rem', color: 'var(--accent-gold)', marginTop: 4, fontWeight: 700, letterSpacing: '0.04em' }}>
             STAFF & TERMINAL ACCESS PORTAL

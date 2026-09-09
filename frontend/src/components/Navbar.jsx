@@ -170,7 +170,7 @@ export default function Navbar() {
                   lineHeight: 1.1,
                   whiteSpace: 'nowrap'
                 }}>
-                  {cafeInfo?.name || 'The Velvet Bean'}
+                  {cafeInfo?.name || 'Cafe-Management'}
                 </div>
                 <div style={{ fontSize: '0.68rem', color: 'var(--accent-gold)', fontWeight: 700, letterSpacing: '0.04em' }}>
                   MANAGEMENT
