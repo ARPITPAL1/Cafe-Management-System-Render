@@ -20,7 +20,7 @@ services:
 
   # 2. Frontend Static Site (React + Vite SPA)
   - type: web
-    name: cafe-management
+    name: cafe-management-system
     runtime: static
     rootDir: frontend
     buildCommand: "npm install && npm run build"
