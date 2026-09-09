@@ -19,12 +19,9 @@ services:
         value: "*"
 
   # 2. Frontend Static Site (React + Vite SPA)
-  - type: web
+  - type: static
     name: cafe-frontend
-    runtime: static
     rootDir: frontend
-    plan: free
-    region: oregon
     buildCommand: "npm install && npm run build"
     staticPublishPath: "./dist"
     routes:
